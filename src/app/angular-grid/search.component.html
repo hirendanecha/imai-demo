@@ -11,11 +11,17 @@
           (keyup)="getUser($event)"
         />
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of userList" class="w-100">
-            <div class="d-flex" (click)="goToProfile(option)">
-              <img class="profile-picture me-3" [src]="option.picture" alt="">
+          <mat-option
+            *ngFor="let option of userList"
+            class="w-100"
+            (onSelectionChange)="goToProfile(option)"
+          >
+            <div class="d-flex">
+              <img class="profile-picture me-3" [src]="option.picture" alt="" />
               <span>{{ option.username }}</span>
-              <span class="w-100 float-end text-end">{{ option.followers }}</span>
+              <span class="w-100 float-end text-end">{{
+                option.followers
+              }}</span>
             </div>
           </mat-option>
         </mat-autocomplete>
@@ -23,7 +29,3 @@
     </form>
   </div>
 </nav>
-
-<!-- <div class="container">
-  <app-feed [userId]="userId"></app-feed>
-</div> -->

@@ -21,12 +21,12 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   getUser(e) {
-    this.spinner.show();
+    // this.spinner.show();
     console.log(e.target.value);
     const userName = e.target.value;
     this.sharedService.getUser(userName).subscribe(
       (res: any) => {
-        this.spinner.hide();
+        // this.spinner.hide();
         this.userList = res.data;
         this.userList.filter((ele) => {
           return (ele.followers =
@@ -39,11 +39,9 @@ export class SearchComponent implements OnInit {
         console.log(this.userList);
       },
       (error) => {
-        this.spinner.hide();
+        // this.spinner.hide();
 
-
-        
-        console.log(error)                   ;
+        console.log(error);
       }
     );
   }

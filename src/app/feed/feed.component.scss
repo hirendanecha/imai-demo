@@ -12,16 +12,15 @@
     .content {
       position: relative;
       width: 320px;
-      height: 320px;
+      height: 400px;
       margin: 10px;
-      margin: auto;
       overflow: hidden;
       cursor: pointer;
       .content-overlay {
         background: rgba(0, 0, 0, 0.7);
         position: absolute;
         width: 320px;
-        height: 320px;
+        height: 400px;
         left: 0;
         top: 0;
         bottom: 0;
@@ -63,11 +62,18 @@
           opacity: 1;
         }
       }
+      .content-image {
+        width: 320px;
+        height: 400px;
+        margin: 10px;
+      }
     }
-    .feed-image {
-      width: 320px;
-      height: 320px;
-      margin: 10px;
+  }
+  h5 {
+    line-height: 1;
+    .verify-img {
+      width: 23px;
+      height: 23px;
     }
   }
 }

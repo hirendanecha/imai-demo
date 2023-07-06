@@ -13,9 +13,9 @@
           <div class="col-4">
             <h5>
               {{ userProfileData.username }}
-              <span
-                ><i class="fa-solid fa-badge-check" style="color: #007bff"></i
-              ></span>
+              <span *ngIf="userProfileData.is_verified"
+                ><img src="/assets/blue-tick.png" class="verify-img" alt=""
+              /></span>
             </h5>
             <div class="d-flex justify-content-between">
               <span>{{ userProfileData.post }} Post</span>
@@ -31,7 +31,7 @@
     </div>
     <div class="row justify-content-center feed-list my-5">
       <div
-        class="col-lg-4 col-md-6 col-12 text-center"
+        class="col-lg-4 col-md-6 col-12 text-center my-2"
         *ngFor="let item of userData"
       >
         <div class="content">
@@ -45,8 +45,6 @@
                   : item?.image_versions2?.candidates[1]?.url
               "
               [alt]="item.pk"
-              [width]="item?.image_versions2?.candidates[1]?.width"
-              [height]="item?.image_versions2?.candidates[1]?.height"
             />
             <div
               class="content-details fadeIn-top d-flex justify-content-around"

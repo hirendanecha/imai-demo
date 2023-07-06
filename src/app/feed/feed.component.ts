@@ -15,7 +15,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss'],
 })
-export class FeedComponent implements OnInit, OnChanges, AfterViewInit {
+export class FeedComponent implements OnInit, AfterViewInit {
   useId: any;
   mapImgObj: any = {};
   userData = [];
@@ -24,24 +24,25 @@ export class FeedComponent implements OnInit, OnChanges, AfterViewInit {
     private sharedService: SharedService,
     private route: ActivatedRoute,
     private spinner: NgxSpinnerService
-  ) {
-    this.useId = this.route.url['_value'][1].path;
-    console.log(this.useId);
-    this.userProfileData = JSON.parse(localStorage.getItem('userData'));
-  }
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.userProfileData);
+    console.log('Hello');
+    this.route.paramMap.subscribe((params) => {
+      const userId = params.get('id');
+      this.getUserData(userId);
+    });
   }
+  ngAfterViewInit(): void {}
 
-  ngOnChanges(): void {}
-  ngAfterViewInit(): void {
+  getUserData(userId) {
     this.spinner.show();
-    if (this.useId) {
-      this.sharedService.getUserDetailsById(this.useId).subscribe(
-        (res: any) => {
+    this.sharedService.getUserDetailsById(userId).subscribe(
+      (res: any) => {
+        console.log('res', res);
+        if (res.items) {
+          this.userProfileData = JSON.parse(localStorage.getItem('userData'));
           this.spinner.hide();
-          console.log('res', res);
           this.userData = res.items;
           this.userData.filter((ele) => {
             if (ele.like_count) {
@@ -60,12 +61,12 @@ export class FeedComponent implements OnInit, OnChanges, AfterViewInit {
             }
             return ele;
           });
-        },
-        (error) => {
-          this.spinner.hide();
-          console.log(error);
         }
-      );
-    }
+      },
+      (error) => {
+        this.spinner.hide();
+        console.log(error);
+      }
+    );
   }
 }
