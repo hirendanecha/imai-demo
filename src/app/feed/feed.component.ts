@@ -1,11 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
-import { ColDef, IDatasource, IGetRowsParams } from 'ag-grid-community';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -27,7 +20,6 @@ export class FeedComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('Hello');
     this.route.paramMap.subscribe((params) => {
       const userId = params.get('id');
       this.getUserData(userId);
@@ -39,7 +31,6 @@ export class FeedComponent implements OnInit, AfterViewInit {
     this.spinner.show();
     this.sharedService.getUserDetailsById(userId).subscribe(
       (res: any) => {
-        console.log('res', res);
         if (res.items) {
           this.userProfileData = JSON.parse(localStorage.getItem('userData'));
           this.spinner.hide();
