@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap");
+html,
+body {
+  font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.cdk-overlay-pane {
+  position: absolute !important;
+  font-family: circularbook !important;
+  width: 430px !important;
+  max-width: 95% !important;
+  height: auto !important;
+  overflow: hidden !important;
+  margin-top: 32px !important;
+  /* margin-left: -48px!important; */
+  padding: 8px min(max(12px, 1.5vw), 16px) !important;
+  box-shadow: 0 8px 16px #2e333329 !important;
+  border-radius: 8px;
+  background-color: #fff !important;
+  border: solid 1px #e1e6e6 !important;
+  opacity: 1 !important;
+  left: 740px !important;
+  font-family: "Barlow" !important;
+  mat-option {
+    margin: 8px 0 8px 0px !important;
+    .mdc-list-item__primary-text {
+      width: 100%;
+    }
+  }
+}
+
+.profile-picture {
+  width: 40px;
+  border-radius: 50px;
+}
+.mdc-line-ripple {
+  display: none;
+}
+.mat-mdc-form-field-bottom-align::before {
+  display: block !important;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-grid;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  // color: var(--primary);
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+.mat-icon {
+  --mat-size: 24px;
+  --mat-wght: 200;
+  --mat-fill: 0;
+  --mat-grad: 0;
+  font-size: var(--mat-size);
+  font-variation-settings: "wght" var(--mat-wght), "FILL" var(--mat-fill),
+    "GRAD" var(--mat-grad);
+}
+.fw-300 {
+  font-weight: 300;
+}
+.fw-400 {
+  font-weight: 400;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fs-xxxl {
+  font-size: 40px;
+}
+.fs-xxl {
+  font-size: 34px;
+}
+.fs-xl {
+  font-size: 30px;
+}
+.fs-lg {
+  font-size: 24px;
+}
+.fs-md {
+  font-size: 16px;
+}

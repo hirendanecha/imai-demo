@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="collapse navbar-collapse justify-content-center w-100">
+    <form class="user-search-box">
+      <mat-form-field class="w-100">
+        <input
+          class=""
+          type="text"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+          (keyup)="getUser($event)"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of userList" class="w-100">
+            <div class="d-flex" (click)="goToProfile(option)">
+              <img class="profile-picture me-3" [src]="option.picture" alt="">
+              <span>{{ option.username }}</span>
+              <span class="w-100 float-end text-end">{{ option.followers }}</span>
+            </div>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+</nav>
+
+<!-- <div class="container">
+  <app-feed [userId]="userId"></app-feed>
+</div> -->
