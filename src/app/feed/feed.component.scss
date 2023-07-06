@@ -65,7 +65,7 @@
       .content-image {
         width: 320px;
         height: 400px;
-        margin: 10px;
+        // margin: 10px;
       }
     }
   }
@@ -75,5 +75,11 @@
       width: 23px;
       height: 23px;
     }
+  }
+}
+
+@media (max-width: 960px) {
+  .user-profile {
+    width: 100px !important;
   }
 }

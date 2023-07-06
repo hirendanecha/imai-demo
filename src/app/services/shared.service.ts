@@ -16,7 +16,7 @@ export class SharedService {
 
   getUser(userName: '') {
     return this.http.get(
-      `${this.url}/dict/users/?q=${userName}&limit=12&type=lookalike&platform=instagram`,
+      `${this.url}/dict/users/?q=${userName}&limit=18&type=lookalike&platform=instagram`,
       { headers: this.headers }
     );
   }

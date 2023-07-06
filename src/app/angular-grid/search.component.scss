@@ -32,3 +32,9 @@
     }
   }
 }
+
+@media (max-width:960px) {
+  .user-search-box {
+    max-width: 330px !important;
+  }
+}
